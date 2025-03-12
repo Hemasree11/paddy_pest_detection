@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load custom_filters %}
+{% block content %}
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h2 class="text-center">Admin Login</h2>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="id_username">Username</label>
+                        {{ form.username.errors }}
+                        {{ form.username }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_password">Password</label>
+                        {{ form.password.errors }}
+                        {{ form.password }}
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

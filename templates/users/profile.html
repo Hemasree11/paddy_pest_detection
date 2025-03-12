@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card">
+            <div class="card-header bg-info text-white">
+                <h2>{{ user.username }}'s Profile</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Account Details</h4>
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>Username</th>
+                                <td>{{ user.username }}</td>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
+                                <td>{{ user.email }}</td>
+                            </tr>
+                            <tr>
+                                <th>Last Login</th>
+                                <td>{{ user.last_login }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-12">
+                        <h4>Recent Uploads</h4>
+                        {% if user.paddyimage_set.all %}
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Uploaded On</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for img in user.paddyimage_set.all|slice:":5" %}
+                                    <tr>
+                                        <td>
+                                            <img src="{{ img.image.url }}" alt="Paddy Image" class="img-thumbnail" style="max-height: 100px;">
+                                        </td>
+                                        <td>{{ img.uploaded_at }}</td>
+                                        <td>
+                                            <a href="{% url 'results' img.id %}" class="btn btn-sm btn-info">View Results</a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        {% else %}
+                            <p>No uploads yet. <a href="{% url 'upload' %}">Upload an image</a> to get started.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,72 @@
+/* Custom styles for Paddy Pest Detection system */
+
+body {
+    background-color: #f8f9fa;
+}
+
+.jumbotron {
+    background-color: #f1f8ff;
+    border-radius: 0.5rem;
+}
+
+.card {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    margin-bottom: 1.5rem;
+}
+
+.card-header {
+    font-weight: 500;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    border-top: 1px solid #e9ecef;
+}
+
+/* Progress bars styling */
+.progress {
+    height: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+    background-color: #e9ecef;
+}
+
+.progress-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/* Custom file input styling */
+.custom-file-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Table formatting for results */
+.table th {
+    background-color: #f8f9fa;
+}
+
+/* Badge styles */
+.badge-success {
+    background-color: #28a745;
+}
+
+.badge-danger {
+    background-color: #dc3545;
+}
+
+/* Image thumbnail styles */
+.img-thumbnail {
+    border: 1px solid #dee2e6;
+    padding: 0.25rem;
+    background-color: #fff;
+    border-radius: 0.25rem;
+}
